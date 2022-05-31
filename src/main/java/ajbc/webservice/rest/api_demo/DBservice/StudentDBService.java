@@ -74,4 +74,6 @@ public class StudentDBService {
 		return students.values().stream().filter(s->s.getAverage() >= minAverage && s.getAverage() <= maxAverage)
 				.collect(Collectors.toList());
 	}
+	
+
 }

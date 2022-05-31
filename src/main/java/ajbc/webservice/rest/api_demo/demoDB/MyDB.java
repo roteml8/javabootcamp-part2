@@ -44,6 +44,8 @@ public class MyDB {
 				new Course("Computer Science"),
 				new Course("Discrete Math"));
 		courses = courseList.stream().collect(Collectors.toMap(Course::getID, Function.identity()));
+		
+		students.get(1001l).setCourses(courseList);
 	}
    
 	public Map<Long, Student> getStudents(){

@@ -15,7 +15,6 @@ import jakarta.ws.rs.PUT;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
-import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
@@ -71,6 +70,8 @@ public class StudentResource {
 		return studentDB.getAllStudents();
 	}
 	
+
+	
 	// add new student
 	
 	@POST
@@ -112,8 +113,13 @@ public class StudentResource {
 		return studentDB.deleteStudent(id);
 	}
 	
+	//link to another resource
+	@Path("/{id}/courses")
+	public StudentCourseResource getCourseResource()
+	{
+		return new StudentCourseResource();
+		
+	}
 	
-	
-	
-	
+		
 }
